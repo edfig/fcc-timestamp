@@ -15,8 +15,9 @@ app.use(express.static('public'));
 app.get("/:query", function (request, response) {
   //response.sendFile(__dirname + '/views/index.html');
   var query = request.params.query;
+  var date = new Date(query * 1000);
   //test whether the query is a 10 digit number
-  response.end(query);
+  response.end(date);
 });
 
 app.get("/dreams", function (request, response) {
