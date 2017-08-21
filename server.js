@@ -13,9 +13,9 @@ app.use(express.static('public'));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/:query", function (request, response) {
-  var query = request.params.query;
-  var date = new Date(2014, 1, 1);
-    response.end(date);
+  var query = parseInt(request.params.query, 10);
+  var date = new Date(query);
+    response.end(typeof query);
 });
         
 app.get("/dreams", function (request, response) {
