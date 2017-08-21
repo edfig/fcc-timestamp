@@ -13,13 +13,10 @@ app.use(express.static('public'));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/:query", function (request, response) {
-  //response.sendFile(__dirname + '/views/index.html');
-  var query = request.params.query;
-  var date = new Date(query * 1000);
-  //test whether the query is a 10 digit number
-  response.end(date);
+  var query = request.query;
+  response.end(query);
 });
-
+        
 app.get("/dreams", function (request, response) {
   response.send(dreams);
 });
