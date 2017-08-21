@@ -12,8 +12,10 @@ var app = express();
 app.use(express.static('public'));
 
 // http://expressjs.com/en/starter/basic-routing.html
-app.get("/", function (request, response) {
-  response.sendFile(__dirname + '/views/index.html');
+app.get("/:query", function (request, response) {
+  //response.sendFile(__dirname + '/views/index.html');
+  var query = request.params.query;
+  response.send('query);
 });
 
 app.get("/dreams", function (request, response) {
