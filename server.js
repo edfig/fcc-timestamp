@@ -4,6 +4,7 @@
 // init project
 var express = require('express');
 var app = express();
+var timestamp = require('unix-timestamp');
 
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
@@ -21,7 +22,8 @@ app.get("/:query", function (request, response) {
   // Seconds part from the timestamp
   var seconds = "0" + date.getSeconds();
     //response.end(query * 1 + "then * 1000: " + (query * 1000) + " and then to date, hopefully: " + date);
-  response.end("hours: " + hours + " minutes: " + minutes + " seconds: " + seconds  );
+  //response.end("hours: " + hours + " minutes: " + minutes + " seconds: " + seconds  );
+  response.end(timestamp.now().toString());    
 });
         
 app.get("/dreams", function (request, response) {
