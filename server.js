@@ -18,10 +18,9 @@ app.get("/:query", function (request, response) {
   var date = new Date(query * 1000);
   var month = date.getMonth();
   var date = date.getDate();
-  var year = date.getFull
-    //response.end(query * 1 + "then * 1000: " + (query * 1000) + " and then to date, hopefully: " + date);
-  //response.end("hours: " + hours + " minutes: " + minutes + " seconds: " + seconds  );
-  response.end(timestamp.now().toString());    
+  var year = date.getYear();
+  
+  response.end(month + "-" + date + "-" + year);    
 });
         
 app.get("/dreams", function (request, response) {
