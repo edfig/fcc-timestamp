@@ -15,7 +15,7 @@ app.use(express.static('public'));
 app.get("/:query", function (request, response) {
   var query = parseInt(request.params.query, 10);
   var date = new Date(query);
-    response.end(query);
+    response.end(query * 1 + "then add 1: " + query);
 });
         
 app.get("/dreams", function (request, response) {
