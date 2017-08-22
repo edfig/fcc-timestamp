@@ -14,8 +14,14 @@ app.use(express.static('public'));
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/:query", function (request, response) {
   var query = parseInt(request.params.query, 10);
-  var date = new Date(query);
-    response.end(query * 1 + "then add 1: " + query);
+  var date = new Date(query * 1000);
+  var hours = date.getHours();
+  // Minutes part from the timestamp
+  var minutes = "0" + date.getMinutes();
+  // Seconds part from the timestamp
+  var seconds = "0" + date.getSeconds();
+    //response.end(query * 1 + "then * 1000: " + (query * 1000) + " and then to date, hopefully: " + date);
+  response.end("hours: " + hours + " minutes: " + minutes + " seconds: " + seconds  );
 });
         
 app.get("/dreams", function (request, response) {
