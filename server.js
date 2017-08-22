@@ -16,11 +16,9 @@ app.use(express.static('public'));
 app.get("/:query", function (request, response) {
   var query = parseInt(request.params.query, 10);
   var date = new Date(query * 1000);
-  var hours = date.getHours();
-  // Minutes part from the timestamp
-  var minutes = "0" + date.getMinutes();
-  // Seconds part from the timestamp
-  var seconds = "0" + date.getSeconds();
+  var month = date.getMonth();
+  var date = date.getDate();
+  var year = date.getFull
     //response.end(query * 1 + "then * 1000: " + (query * 1000) + " and then to date, hopefully: " + date);
   //response.end("hours: " + hours + " minutes: " + minutes + " seconds: " + seconds  );
   response.end(timestamp.now().toString());    
