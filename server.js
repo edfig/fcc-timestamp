@@ -18,7 +18,7 @@ app.get("/:query", function (request, response) {
   var date = new Date(query * 1000);
   var month = date.getMonth();
   var date = date.getDate();
-  var year = date.getYear();
+  var year = date.getFullYear();
   
   response.end(month + "-" + date + "-" + year);    
 });
