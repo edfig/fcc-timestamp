@@ -16,11 +16,15 @@ app.use(express.static('public'));
 app.get("/:query", function (request, response) {
   var query = parseInt(request.params.query, 10);
   var date = new Date(query * 1000);
-  var month = date.getMonth();
-  var date = date.getDate();
-  var year = date.getFullYear();
+  var mm = date.getMonth();
+  var dd = date.getDate();
+  var yyyy = date.getFullYear();
+  var arr = {
+    'unixtime': query,
+    'normietime': mm + "-" + dd + "-" + yyyy
+  };
+  response.end(JSON.stringify(arr));
   
-  response.end(month + "-" + date + "-" + year);    
 });
         
 app.get("/dreams", function (request, response) {
