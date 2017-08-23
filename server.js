@@ -20,6 +20,7 @@ app.get("/:query", function (request, response) {
   var dd = date.getDate();
   var yyyy = date.getFullYear();
   var arr = {
+    'response type': typeof request.params.query,
     'unixtime': query,
     'normietime': mm + "-" + dd + "-" + yyyy
   };
