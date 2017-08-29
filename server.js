@@ -15,20 +15,23 @@ app.use(express.static('public'));
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/:query", function (request, response) {
   var query = parseInt(request.params.query, 10);
-  var date = new Date(query * 1000);
-  var mm = date.getMonth();
-  var dd = date.getDate();
-  var yyyy = date.getFullYear();
+  
   if (!isNaN(query) && query.toString().length === 10) {
+    //if it's a 10 digit number
     var type = '10 digit number'
-  } else if (  ) {
-    
+    var date = new Date(query * 1000);
+    var mm = date.getMonth();
+    var dd = date.getDate();
+    var yyyy = date.getFullYear();
   }
+    var normietime = new Date('January 1, 2016')
+  
   var arr = {
     'type': type,
     'length': request.params.query.length,
     'unixtime': query,
-    'normietime': mm + "-" + dd + "-" + yyyy
+    'translated unixtime': mm + "-" + dd + "-" + yyyy,
+    'normietime': normietime
   };
   response.end(JSON.stringify(arr));
   
