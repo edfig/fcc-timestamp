@@ -19,8 +19,13 @@ app.get("/:query", function (request, response) {
   var mm = date.getMonth();
   var dd = date.getDate();
   var yyyy = date.getFullYear();
+  if (!isNaN(query) && query.toString().length === 10) {
+    var type = '10 digit number'
+  } else if (  ) {
+    
+  }
   var arr = {
-    'response type': typeof request.params.query,
+    'type': type,
     'length': request.params.query.length,
     'unixtime': query,
     'normietime': mm + "-" + dd + "-" + yyyy
