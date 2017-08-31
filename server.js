@@ -26,16 +26,15 @@ app.get("/:query", function (request, response) {
     var yyyy = date.getFullYear();
   }
     var normietime = new Date('January 1, 2016')
-    var moduletest = function(err, null) {
-      if (err)
-    }
+    var moduletest = module();
   
   var arr = {
     'type': type,
     'length': request.params.query.length,
     'unixtime': query,
     'translated unixtime': mm + "-" + dd + "-" + yyyy,
-    'normietime': normietime + "hi " + module.tounixtime()
+    'normietime': normietime,
+    'module test here': moduletest
   };
   response.end(JSON.stringify(arr));
   
