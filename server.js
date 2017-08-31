@@ -25,8 +25,8 @@ app.get("/:query", function (request, response) {
     var dd = date.getDate();
     var yyyy = date.getFullYear();
   }
-    var normietime = new Date('January 1, 2016')
-    var moduletest = mymodule(function callback(err, data) {
+    var normietime = new Date(query)
+    var moduletest = mymodule("sent parameter", function callback(err, data) {
       if (err) throw err;
       return data;
     });
@@ -36,7 +36,7 @@ app.get("/:query", function (request, response) {
     'length': request.params.query.length,
     'unixtime': query,
     'translated unixtime': mm + "-" + dd + "-" + yyyy,
-    'normietime': normietime,
+    'normietime': normietime.getMonth() + "--" + normietime.getDate() + "-" + normietime.getFullYear(),
     'module test here': moduletest
   };
   response.end(JSON.stringify(arr));

@@ -1,4 +1,4 @@
 module.exports = function mymodule(a, callback) {
-  i
-  return callback(null, 'hiya!');
+  
+  return callback(null, a + ' hiya!');
 }
