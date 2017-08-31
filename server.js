@@ -5,6 +5,7 @@
 var express = require('express');
 var app = express();
 var timestamp = require('unix-timestamp');
+var module = require('./module.js')
 
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
@@ -25,13 +26,16 @@ app.get("/:query", function (request, response) {
     var yyyy = date.getFullYear();
   }
     var normietime = new Date('January 1, 2016')
+    var moduletest = function(err, null) {
+      if (err)
+    }
   
   var arr = {
     'type': type,
     'length': request.params.query.length,
     'unixtime': query,
     'translated unixtime': mm + "-" + dd + "-" + yyyy,
-    'normietime': normietime
+    'normietime': normietime + "hi " + module.tounixtime()
   };
   response.end(JSON.stringify(arr));
   

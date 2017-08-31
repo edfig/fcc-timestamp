@@ -1,5 +1,3 @@
-module.export
-
-function tounixtime(a) {
-  
+module.exports = function tounixtime(callback) {
+    return "module";
 }
