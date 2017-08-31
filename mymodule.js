@@ -1,3 +1,4 @@
-module.exports = function mymodule(callback) {
-    return callback(null, 'hiya!');
+module.exports = function mymodule(a, callback) {
+  i
+  return callback(null, 'hiya!');
 }

@@ -5,7 +5,7 @@
 var express = require('express');
 var app = express();
 var timestamp = require('unix-timestamp');
-var module = require('./module.js')
+var mymodule = require('./mymodule.js')
 
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
@@ -26,7 +26,10 @@ app.get("/:query", function (request, response) {
     var yyyy = date.getFullYear();
   }
     var normietime = new Date('January 1, 2016')
-    var moduletest = module();
+    var moduletest = mymodule(function callback(err, data) {
+      if (err) throw err;
+      return data;
+    });
   
   var arr = {
     'type': type,
