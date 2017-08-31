@@ -21,44 +21,30 @@ app.get("/:query", function (request, response) {
     //if it's a 10 digit number
     var type = '10 digit number'
     var date = new Date(query * 1000);
-    var mm = date.getMonth();
-    var dd = date.getDate();
-    var yyyy = date.getFullYear();
+  } else {
+    var type = 'not 10 digit number';
+    var date = new Date(request.params.query)
   }
-    var normietime = new Date(query)
-    var moduletest = mymodule("sent parameter", function callback(err, data) {
-      if (err) throw err;
-      return data;
-    });
+  var mm = date.getMonth();
+  var dd = date.getDate();
+  var yyyy = date.getFullYear();  
+  var moduletest = mymodule("sent parameter", function callback(err, data) {
+    if (err) throw err;
+    return data;
+  });
   
   var arr = {
     'type': type,
     'length': request.params.query.length,
     'unixtime': query,
     'translated unixtime': mm + "-" + dd + "-" + yyyy,
-    'normietime': normietime.getMonth() + "--" + normietime.getDate() + "-" + normietime.getFullYear(),
+    //'normietime': normietime,//normietime.getMonth() + "--" + normietime.getDate() + "-" + normietime.getFullYear(),
     'module test here': moduletest
   };
   response.end(JSON.stringify(arr));
   
 });
         
-app.get("/dreams", function (request, response) {
-  response.send(dreams);
-});
-
-// could also use the POST body instead of query string: http://expressjs.com/en/api.html#req.body
-app.post("/dreams", function (request, response) {
-  dreams.push(request.query.dream);
-  response.sendStatus(200);
-});
-
-// Simple in-memory store for now
-var dreams = [
-  "Find and count some sheep",
-  "Climb a really tall mountain",
-  "Wash the dishes"
-];
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
