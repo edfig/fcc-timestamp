@@ -34,7 +34,6 @@ app.get("/:query", function (request, response) {
     if (err) throw err;
     return data;
   });
-  
   var arr = {
     //'type': type,
     //'length': request.params.query.length,
@@ -44,8 +43,11 @@ app.get("/:query", function (request, response) {
     //'module test here': moduletest
   };
   response.end(JSON.stringify(arr));
-  
 });
+
+app.get("/*", function (request, response) {
+  response.sendFile(__dirname + '/views/index.html');
+})
         
 
 // listen for requests :)
