@@ -11,15 +11,17 @@ module.exports = function (request, response) {
     var date = new Date(request.params.query)
     var unixtime = date.getTime() / 1000;
   }
-  var mm = date.getMonth() + 1;
+  var mm = date.getMonth();
   var dd = date.getDate();
   var yyyy = date.getFullYear();  
+  
+  var months = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
   var arr = {
     //'type': type,
     //'length': request.params.query.length,
     'unixtime': unixtime,
-    'translated unixtime': mm + "-" + dd + "-" + yyyy,
+    'translated unixtime': months[mm] + " " + dd + ", " + yyyy,
     //'normietime': normietime,//normietime.getMonth() + "--" + normietime.getDate() + "-" + normietime.getFullYear(),
     //'module test here': moduletest
   };
