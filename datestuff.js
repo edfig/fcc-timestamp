@@ -18,12 +18,8 @@ module.exports = function (request, response) {
   var months = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
   var arr = {
-    //'type': type,
-    //'length': request.params.query.length,
     'unixtime': unixtime,
-    'translated unixtime': months[mm] + " " + dd + ", " + yyyy,
-    //'normietime': normietime,//normietime.getMonth() + "--" + normietime.getDate() + "-" + normietime.getFullYear(),
-    //'module test here': moduletest
+    'normietime': months[mm] + " " + dd + ", " + yyyy,
   };
   response.end(JSON.stringify(arr));
 }
