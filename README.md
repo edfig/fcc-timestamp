@@ -15,7 +15,7 @@ Hope this helps someone.
 Also, I made this using Glitch. That was fun. Find out more [about Glitch](https://glitch.com/about).
 
 
-Timestamp Microserviice
+Timestamp Microservice
 ------------
 
 - Home page points to views/index.html
