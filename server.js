@@ -5,7 +5,7 @@
 var express = require('express');
 var app = express();
 var timestamp = require('unix-timestamp');
-var mymodule = require('./router.js')
+var datestuff = require('./datestuff.js')
 
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
@@ -30,7 +30,7 @@ app.get("/:query", function (request, response) {
   var mm = date.getMonth() + 1;
   var dd = date.getDate();
   var yyyy = date.getFullYear();  
-  var moduletest = mymodule("sent parameter", function callback(err, data) {
+  var moduletest = datestuff("sent parameter", function callback(err, data) {
     if (err) throw err;
     return data;
   });
