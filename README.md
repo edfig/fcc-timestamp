@@ -10,7 +10,7 @@ Hope this helps someone.
 
 **Peace**,
 
-'Edwin'
+`Edwin`
 
 Also, I made this using Glitch. That was fun. Find out more [about Glitch](https://glitch.com/about).
 
@@ -24,7 +24,7 @@ Timestamp Microserviice
 
 On the back-end,
 - your app starts at `server.js`
-- I created a module exports (I don't know what it's really called yet) 'timestuff' 
+- I created a module exports (I don't know what it's really called yet) `timestuff.js` 
 --I'm still not certain about when I should use camelCase...should timestuff be timeStuff? If yes, then why?
 
 
