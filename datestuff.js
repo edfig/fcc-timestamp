@@ -16,10 +16,11 @@ module.exports = function (request, response) {
   var yyyy = date.getFullYear();  
   
   var months = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var normietime = !isNaN(unixtime) ? months[mm] + " " + dd + ", " + yyyy : null;
 
   var arr = {
     'unixtime': unixtime,
-    'normietime': months[mm] + " " + dd + ", " + yyyy,
+    'normietime': normietime
   };
   response.end(JSON.stringify(arr));
 }
